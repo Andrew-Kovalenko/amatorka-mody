@@ -1,4 +1,4 @@
-import { IService, ServiceType } from './types';
+import { IService, ServiceFormat, ServiceType } from './types';
 
 export const servicesList: IService[] = [
     {
@@ -6,7 +6,7 @@ export const servicesList: IService[] = [
         title: 'Розбір ліній зовнішності',
         details: {
             price: '70 доларів',
-            format: 'online',
+            format: ServiceFormat.ONLINE,
             ETA: '7-10 робочих днів з моменту надсилання фото та заповнення анкети.',
             lists: [
                 {
@@ -39,11 +39,11 @@ export const servicesList: IService[] = [
     },
     {
         type: ServiceType.WARDROBE_ONLINE,
-        title: 'Online Розбір гардеробу + шопінг-супровід',
+        title: 'Розбір гардеробу + шопінг-супровід',
         notes: 'У випадку наявності великої кількості позицій для розбору, ціна коригується.',
         details: {
             price: '150 доларів',
-            format: 'online',
+            format: ServiceFormat.ONLINE,
             ETA: ' 7-10 робочих днів з моменту надсилання фото та заповнення анкети.',
             lists: [
                 {
@@ -87,11 +87,11 @@ export const servicesList: IService[] = [
     },
     {
         type: ServiceType.WARDROBE_OFFLINE,
-        title: 'Offline Розбір гардеробу + шопінг-супровід',
+        title: 'Розбір гардеробу + шопінг-супровід',
         notes: '3/4 години. Кожна наступна година додатково оплачується.',
         details: {
             price: '150 доларів',
-            format: 'offline',
+            format: ServiceFormat.OFFLINE,
             ETA: ' 7-10 робочих днів з моменту надсилання фото та заповнення анкети.',
             lists: [
                 {
@@ -129,7 +129,7 @@ export const servicesList: IService[] = [
         title: 'Формування капсули',
         details: {
             price: '150 доларів',
-            format: 'online',
+            format: ServiceFormat.ONLINE,
             ETA: ' 7-10 робочих днів з моменту надсилання фото та заповнення анкети.',
             lists: [
                 {
@@ -166,7 +166,7 @@ export const servicesList: IService[] = [
         title: 'Стайлінг гардеробу',
         details: {
             price: '50-100 доларів (в залежності від кількості речей)',
-            format: 'online',
+            format: ServiceFormat.ONLINE,
             ETA: ' 7-10 робочих днів з моменту надсилання фото.',
             lists: [
                 {
@@ -200,7 +200,7 @@ export const servicesList: IService[] = [
         title: 'Стиліст на рік',
         details: {
             price: '500 доларів',
-            format: 'online/offline',
+            format: ServiceFormat.ALL,
             ETA: '7-10 робочих днів для кожної послуги або за запитом',
             lists: [
                 {

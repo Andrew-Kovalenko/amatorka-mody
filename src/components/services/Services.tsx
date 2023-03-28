@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useCallback, useContext, useState } from 'react';
 import { ServicesAccordion, ServicesAccordionHeader, ServicesAccordionHeaderArrow, ServicesAccordionHeaderTitle, ServicesAccordionHeaderTitleFormat, ServicesAccordionItem, ServicesAccordionItemContent, ServicesAccordionItemListSummary, ServicesAccordionItemListTitle, ServicesAccordionItemSummary, ServicesTitle, ServicesWrapper } from './styles';
 import { servicesList } from './servicesList';
-import { ServiceType } from './types';
+import { ServiceFormat, ServiceType } from './types';
 import { NavBarContext } from '../root/NavBarContext';
 
 export const Services: React.FC = () => {
@@ -32,9 +32,17 @@ export const Services: React.FC = () => {
                                 <ServicesAccordionHeaderTitle>
                                     {service.title}
                                 </ServicesAccordionHeaderTitle>
-                                <ServicesAccordionHeaderTitleFormat>
-                                    {service.details.format}
-                                </ServicesAccordionHeaderTitleFormat>
+                                {service.details.format === ServiceFormat.ALL
+                                 ? (
+                                        <ServicesAccordionHeaderTitleFormat>
+                                            <div>ONLINE/</div>
+                                            <div>OFFLINE</div>
+                                        </ServicesAccordionHeaderTitleFormat>
+                                    ) : (
+                                        <ServicesAccordionHeaderTitleFormat>
+                                            {service.details.format}
+                                        </ServicesAccordionHeaderTitleFormat>
+                                    )}
                                 <ServicesAccordionHeaderArrow isOpen={activeTab === service.type} >
                                     +
                                 </ServicesAccordionHeaderArrow>

@@ -23,7 +23,7 @@ export const ServicesAccordion = styled.div`
 `
 
 export const ServicesAccordionHeader = styled.div`
-    height: 60px;
+    min-height: 60px;
     border-bottom: 1px solid white;
     display: grid;
     grid-template-columns: 4fr 1fr 35px;
@@ -38,11 +38,13 @@ export const ServicesAccordionHeaderTitle = styled.h4`
 `
 
 export const ServicesAccordionHeaderTitleFormat = styled.h4`
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
-    align-items: center;
-    justify-content: end    ;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
     opacity: 60%;
+    text-transform: uppercase;
 `
 
 export const ServicesAccordionHeaderArrow = styled.div<{isOpen: boolean}>`

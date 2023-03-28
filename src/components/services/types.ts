@@ -7,6 +7,12 @@ export enum ServiceType {
     STYLIST_FOR_YEAR = 'STYLIST_FOR_YEAR',
 }
 
+export enum ServiceFormat {
+    ONLINE = 'ONLINE',
+    OFFLINE = 'OFFLINE',
+    ALL = 'ALL',
+}
+
 export interface IService {
     type: ServiceType,
     title: string,
@@ -16,7 +22,7 @@ export interface IService {
 
 export interface IServicesDetails {
     price: string,
-    format: string,
+    format: ServiceFormat,
     ETA: string,
     lists: IServicesList[],
     listSummary?: string,

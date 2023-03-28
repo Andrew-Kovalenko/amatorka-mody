@@ -65,7 +65,7 @@ export const Services: React.FC = () => {
                                     </ServicesAccordionItemListSummary>
                                     <ServicesAccordionItemSummary>
                                         <p><span>Вартість</span> - {service.details.price}</p>
-                                        <p><span>Строк виконання</span> - {service.details.ETA}  робочих днів для кожної послуги або за запитом.</p>
+                                        <p><span>Строк виконання</span> - {service.details.ETA}</p>
                                     </ServicesAccordionItemSummary>
                                 </ServicesAccordionItemContent>
                             </ServicesAccordionItem>

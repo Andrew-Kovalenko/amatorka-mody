@@ -4,6 +4,7 @@ import {Intro} from "../intro/Intro";
 import {Services} from "../services/Services";
 import { INavBarContext, NavBarContext } from './NavBarContext';
 import { useRef } from "react";
+import { Contacts } from '../contacts/Contacts';
 
 export const RootComponent: React.FC = () => {
     const initialNavBarContext: INavBarContext = {
@@ -19,6 +20,7 @@ export const RootComponent: React.FC = () => {
                 <Navigation/>
                 <Intro/>
                 <Services/>
+                <Contacts />
             </div>
         </NavBarContext.Provider>
     );

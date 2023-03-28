@@ -40,4 +40,6 @@ export const NavBarItem = styled.div`
     padding: 0 25%;
     font-size: 20px;
     color: white;
+    cursor: pointer;
+;
 `

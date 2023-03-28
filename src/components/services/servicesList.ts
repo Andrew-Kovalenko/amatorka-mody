@@ -91,7 +91,7 @@ export const servicesList: IService[] = [
         notes: '3/4 години. Кожна наступна година додатково оплачується.',
         details: {
             price: '150 доларів',
-            format: 'online',
+            format: 'offline',
             ETA: ' 7-10 робочих днів з моменту надсилання фото та заповнення анкети.',
             lists: [
                 {

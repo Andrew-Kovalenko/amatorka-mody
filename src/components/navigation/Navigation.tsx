@@ -1,6 +1,6 @@
-import {useCallback, useState} from "react";
-import {NavigationButton} from "./button/NavigationButton";
-import {NavBar} from "./nav-bar/NavBar";
+import { useCallback, useState } from 'react';
+import { NavigationButton } from './button/NavigationButton';
+import { NavBar } from './nav-bar/NavBar';
 
 export const Navigation = () => {
     const [isNavBarOpen, setIsNavBarOpen]  = useState(false)

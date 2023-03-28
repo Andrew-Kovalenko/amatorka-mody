@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const ServicesWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1rem 2rem;
     background-color: #063970;
     color: white;
 `

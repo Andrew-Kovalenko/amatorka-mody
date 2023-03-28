@@ -1,4 +1,6 @@
 import {NavBarContent, NavBarItem, NavBarOverlay, NavBarWrapper} from "./styles";
+import { NavBarContext } from '../../root/NavBarContext';
+import { useContext } from "react";
 
 interface IPropsNavBar {
     isNavBarOpen: boolean,
@@ -8,22 +10,38 @@ interface IPropsNavBar {
 export const NavBar: React.FC<IPropsNavBar> = ({
    isNavBarOpen,
    toggleNavBar,
-}) => (
-    <NavBarWrapper isNavBarOpen={isNavBarOpen}>
-        <NavBarOverlay onClick={toggleNavBar} />
-        <NavBarContent >
-            <NavBarItem>
-                Про мене
-            </NavBarItem>
-            <NavBarItem>
-                Послуги
-            </NavBarItem>
-            <NavBarItem>
-                Відгуки
-            </NavBarItem>
-            <NavBarItem>
-                Контакти
-            </NavBarItem>
-        </NavBarContent>
-    </NavBarWrapper>
-)
+}) => {
+    const navBarContext = useContext(NavBarContext);
+
+    if (!navBarContext) {
+        return (
+            <NavBarWrapper isNavBarOpen={isNavBarOpen}>
+                Cannot found nav context
+            </NavBarWrapper>
+        )
+    }
+
+    const onItemClick = (ref: React.RefObject<HTMLDivElement>) => {
+        if (ref.current) {
+            ref.current.scrollIntoView({behavior: 'smooth'})
+            toggleNavBar()
+        }
+    }
+
+    return (
+        <NavBarWrapper isNavBarOpen={isNavBarOpen}>
+            <NavBarOverlay onClick={toggleNavBar}/>
+            <NavBarContent>
+                <NavBarItem onClick={() => onItemClick(navBarContext.mainRef)}>
+                    Головна
+                </NavBarItem>
+                <NavBarItem onClick={() => onItemClick(navBarContext.servicesRef)}>
+                    Послуги
+                </NavBarItem>
+                <NavBarItem onClick={() => onItemClick(navBarContext.contactsRef)}>
+                    Контакти
+                </NavBarItem>
+            </NavBarContent>
+        </NavBarWrapper>
+    );
+}

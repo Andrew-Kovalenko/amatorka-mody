@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const IntroWrapper = styled.div`
     background-color: #fcf4e6;
-    padding: 1rem;
+    padding: 1rem 2rem;
     color: #063970;
     font-size: 18px;
 `

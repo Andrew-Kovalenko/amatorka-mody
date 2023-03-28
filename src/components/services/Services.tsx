@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { useCallback, useState } from 'react';
+import { useCallback, useContext, useState } from 'react';
 import { ServicesAccordion, ServicesAccordionHeader, ServicesAccordionHeaderArrow, ServicesAccordionHeaderTitle, ServicesAccordionHeaderTitleFormat, ServicesAccordionItem, ServicesAccordionItemContent, ServicesAccordionItemListSummary, ServicesAccordionItemListTitle, ServicesAccordionItemSummary, ServicesTitle, ServicesWrapper } from './styles';
 import { servicesList } from './servicesList';
 import { ServiceType } from './types';
+import { NavBarContext } from '../root/NavBarContext';
 
 export const Services: React.FC = () => {
     const [activeTab, setActiveTab] = useState<ServiceType | null>(null)
+    const navBarContext = useContext(NavBarContext);
 
     const toggleTab = useCallback((tab: ServiceType) => {
         if (activeTab === tab) {
@@ -18,7 +20,7 @@ export const Services: React.FC = () => {
     }, [activeTab])
 
     return (
-        <ServicesWrapper>
+        <ServicesWrapper ref={navBarContext && navBarContext.servicesRef}>
             <ServicesTitle>
                 Послуги
             </ServicesTitle>

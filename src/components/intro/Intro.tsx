@@ -1,6 +1,6 @@
-import {IntroList, IntroText, IntroWrapper} from "./styles";
+import { IntroList, IntroText, IntroWrapper } from './styles';
 
-export const Intro: React.FC = () => (
+export const Intro: React.FC = () =>  (
     <IntroWrapper>
         <IntroText>
             Я переконана, що кожна жінка особлива, красива і варта тільки найкращого.
@@ -14,4 +14,4 @@ export const Intro: React.FC = () => (
             <li>змушу забути про застарілі та неефективні правила стайлінгу</li>
         </IntroList>
     </IntroWrapper>
-)
+);

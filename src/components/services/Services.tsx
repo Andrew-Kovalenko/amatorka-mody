@@ -33,7 +33,7 @@ export const Services: React.FC = () => {
                                     {service.title}
                                 </ServicesAccordionHeaderTitle>
                                 {service.details.format === ServiceFormat.ALL
-                                 ? (
+                                    ? (
                                         <ServicesAccordionHeaderTitleFormat>
                                             <div>ONLINE/</div>
                                             <div>OFFLINE</div>
@@ -72,6 +72,9 @@ export const Services: React.FC = () => {
                                         {service.details.listSummary}
                                     </ServicesAccordionItemListSummary>
                                     <ServicesAccordionItemSummary>
+                                        {service.details.importantNote && (
+                                            <p><span>Важливо!</span> {service.details.importantNote}</p>
+                                        )}
                                         <p><span>Вартість</span> - {service.details.price}</p>
                                         <p><span>Строк виконання</span> - {service.details.ETA}</p>
                                     </ServicesAccordionItemSummary>

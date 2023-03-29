@@ -1,8 +1,7 @@
 export enum ServiceType {
     LINES = 'LINES',
     CUPSULA = 'CUPSULA',
-    WARDROBE_OFFLINE = 'WARDROBE_OFFLINE',
-    WARDROBE_ONLINE = 'WARDROBE_ONLINE',
+    WARDROBE_REVIEW = 'WARDROBE_REVIEW',
     WARDROBE_STYLING = 'WARDROBE_STYLING',
     STYLIST_FOR_YEAR = 'STYLIST_FOR_YEAR',
 }
@@ -17,13 +16,13 @@ export interface IService {
     type: ServiceType,
     title: string,
     details: IServicesDetails,
-    notes?: string;
 }
 
 export interface IServicesDetails {
     price: string,
     format: ServiceFormat,
     ETA: string,
+    importantNote?: string,
     lists: IServicesList[],
     listSummary?: string,
 }

@@ -41,10 +41,10 @@ export const ServicesAccordionHeaderTitleFormat = styled.h4`
     font-size: 14px;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: end;
+    justify-content: start;
     opacity: 60%;
     text-transform: uppercase;
+    margin-left: 10px;
 `
 
 export const ServicesAccordionHeaderArrow = styled.div<{isOpen: boolean}>`

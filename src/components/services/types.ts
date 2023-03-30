@@ -32,6 +32,8 @@ export interface IServicesList {
     items: IServicesListItem[],
 }
 
+export type ServicesBenefits = Record<ServiceType, IServicesList>
+
 export interface IServicesListItem {
     text: string,
     innerList?: string[],

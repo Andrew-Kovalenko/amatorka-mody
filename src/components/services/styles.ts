@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const ServicesWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -41,7 +40,7 @@ export const ServicesAccordionHeaderTitleFormat = styled.h4`
     font-size: 14px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    align-items: end;
     opacity: 60%;
     text-transform: uppercase;
     margin-left: 10px;
@@ -135,4 +134,7 @@ export const ServicesAccordionItemSummary = styled.div`
         background-color: white;
         opacity: 60%;
     }
+`
+
+export const BenefitsList = styled.ul`
 `

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useCallback, useContext, useState } from 'react';
-import { ServicesAccordion, ServicesAccordionHeader, ServicesAccordionHeaderArrow, ServicesAccordionHeaderTitle, ServicesAccordionHeaderTitleFormat, ServicesAccordionItem, ServicesAccordionItemContent, ServicesAccordionItemListSummary, ServicesAccordionItemListTitle, ServicesAccordionItemSummary, ServicesTitle, ServicesWrapper } from './styles';
-import { servicesList } from './servicesList';
+import { BenefitsList, ServicesAccordion, ServicesAccordionHeader, ServicesAccordionHeaderArrow, ServicesAccordionHeaderTitle, ServicesAccordionHeaderTitleFormat, ServicesAccordionItem, ServicesAccordionItemContent, ServicesAccordionItemListSummary, ServicesAccordionItemListTitle, ServicesAccordionItemSummary, ServicesTitle, ServicesWrapper } from './styles';
+import { servicesBenefits, servicesList } from './servicesList';
 import { ServiceFormat, ServiceType } from './types';
 import { NavBarContext } from '../root/NavBarContext';
 
@@ -66,6 +66,21 @@ export const Services: React.FC = () => {
                                                     </li>
                                                 )))}
                                             </ul>
+                                            <BenefitsList>
+                                                <ServicesAccordionItemListTitle>{servicesBenefits[service.type].title}</ServicesAccordionItemListTitle>
+                                                {servicesBenefits[service.type].items.map(listItem => ((
+                                                    <li>
+                                                        {listItem.text}
+                                                        {listItem.innerList && (
+                                                            <ol>
+                                                                {listItem.innerList.map(innerItem => ((
+                                                                    <li>{innerItem}</li>
+                                                                )))}
+                                                            </ol>
+                                                        )}
+                                                    </li>
+                                                )))}
+                                            </BenefitsList>
                                         </>
                                     )))}
                                     <ServicesAccordionItemListSummary>

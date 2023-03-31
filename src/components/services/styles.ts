@@ -79,7 +79,7 @@ export const ServicesAccordionItemContent = styled.div`
         margin-bottom: 1rem;
     }
     
-     ol {
+     ol, ul {
          margin-top: 0.5rem;
      }
     

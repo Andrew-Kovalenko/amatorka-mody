@@ -2,8 +2,9 @@ import * as React from 'react';
 import { useCallback, useContext, useState } from 'react';
 import { ServicesAccordion, ServicesAccordionHeader, ServicesAccordionHeaderArrow, ServicesAccordionHeaderTitle, ServicesAccordionHeaderTitleFormat, ServicesAccordionItem, ServicesAccordionItemContent, ServicesAccordionItemListSummary, ServicesAccordionItemListTitle, ServicesAccordionItemSummary, ServicesTitle, ServicesWrapper } from './styles';
 import { servicesList } from './servicesList';
-import { ServiceFormat, ServiceType } from './types';
+import { ServiceFormat, ServiceListType, ServiceType } from './types';
 import { NavBarContext } from '../root/NavBarContext';
+import './styles.css'
 
 export const Services: React.FC = () => {
     const [activeTab, setActiveTab] = useState<ServiceType | null>(null)
@@ -18,6 +19,14 @@ export const Services: React.FC = () => {
 
         setActiveTab(tab)
     }, [activeTab])
+
+    const getListsClass = (listType: ServiceListType): string => {
+        if (listType === ServiceListType.BENEFITS) {
+            return 'benefits-list'
+        }
+
+        return ''
+    }
 
     return (
         <ServicesWrapper ref={navBarContext && navBarContext.servicesRef}>
@@ -52,7 +61,7 @@ export const Services: React.FC = () => {
                                     {service.details.lists.map(list => ((
                                         <>
                                             <ServicesAccordionItemListTitle>{list.title}</ServicesAccordionItemListTitle>
-                                            <ul>
+                                            <ul className={getListsClass(list.type)}>
                                                 {list.items.map(listItem => ((
                                                     <li>
                                                         {listItem.text}

@@ -34,3 +34,12 @@ export const ContactsLink = styled.a`
     cursor: pointer;
     color: #063970;
 `
+
+
+export const ContactsIcon = styled.a`
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    background-size: 50px;
+`

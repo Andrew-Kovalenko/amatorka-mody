@@ -1,0 +1,13 @@
+.benefits-list  li {
+    list-style-type: none;
+}
+
+.benefits-list li:before {
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+    background-image: url("../../assets/icons/white-checkmark.svg");
+    background-size: 16px;
+}

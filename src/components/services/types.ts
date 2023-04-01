@@ -12,6 +12,13 @@ export enum ServiceFormat {
     ALL = 'ALL',
 }
 
+export enum ServiceListType {
+    NEED_BECAUSE = 'NEED_BECAUSE',
+    SCHEME = 'SCHEME',
+    BENEFITS = 'BENEFITS',
+    SERVICES = 'SERVICES',
+}
+
 export interface IService {
     type: ServiceType,
     title: string,
@@ -29,10 +36,9 @@ export interface IServicesDetails {
 
 export interface IServicesList {
     title: string,
+    type: ServiceListType;
     items: IServicesListItem[],
 }
-
-export type ServicesBenefits = Record<ServiceType, IServicesList>
 
 export interface IServicesListItem {
     text: string,

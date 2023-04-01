@@ -8,10 +8,10 @@ export const IntroWrapper = styled.div`
 `
 
 export const IntroText = styled.p`
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     
     :last-child {
-        margin-bottom: 0;
+        margin-bottom: 15px;
     }
 `
 

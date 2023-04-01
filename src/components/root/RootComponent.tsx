@@ -1,14 +1,13 @@
-import {Header} from "../header/Header";
-import {Navigation} from "../navigation/Navigation";
-import {Intro} from "../intro/Intro";
-import {Services} from "../services/Services";
+import { Navigation } from '../navigation/Navigation';
+import { AboutMe } from '../01-intro/AboutMe';
+import { Services } from '../02-services/Services';
 import { INavBarContext, NavBarContext } from './NavBarContext';
-import { useRef } from "react";
-import { Contacts } from '../contacts/Contacts';
+import { useRef } from 'react';
+import { Contacts } from '../03-contacts/Contacts';
 
 export const RootComponent: React.FC = () => {
     const initialNavBarContext: INavBarContext = {
-        mainRef: useRef(null),
+        aboutMeRef: useRef(null),
         servicesRef: useRef(null),
         contactsRef: useRef(null),
     }
@@ -16,9 +15,8 @@ export const RootComponent: React.FC = () => {
     return (
         <NavBarContext.Provider value={initialNavBarContext}>
             <div>
-                <Header/>
                 <Navigation/>
-                <Intro/>
+                <AboutMe/>
                 <Services/>
                 <Contacts />
             </div>

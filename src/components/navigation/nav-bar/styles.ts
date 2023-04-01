@@ -9,7 +9,7 @@ export const NavBarWrapper = styled.div<{isNavBarOpen: boolean}>`
     width: 100%;
     z-index: 5;
 
-    transition: right 0.3s linear;
+    transition: all 0.3s linear;
 `
 
 export const NavBarOverlay = styled.div`
@@ -26,6 +26,7 @@ export const NavBarContent = styled.div`
     top: 0;
     right: 0;
     width: 60%;
+    max-width: 400px;
     height: 100%;
     display: flex;
     flex-direction: column;

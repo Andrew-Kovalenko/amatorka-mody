@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ServicesWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 1rem 2rem;
+    padding: 2.5rem 2rem;
     background-color: #063970;
     color: white;
 `
@@ -30,6 +30,14 @@ export const ServicesAccordionHeader = styled.div`
     justify-content: space-between;
     padding: 0.2rem 0.5rem;
     font-size: 18px;
+    cursor: pointer;
+    transition: all .2s linear;
+    
+    :hover {
+        border-bottom: 1px solid #fcf4e6;
+        color: #fcf4e6;
+        opacity: 75%;
+    }
 `
 
 export const ServicesAccordionHeaderTitle = styled.h4`
@@ -101,11 +109,6 @@ export const ServicesAccordionItemListTitle = styled.div`
     padding-bottom: 2px;
     border-bottom: 1px solid #fcf4e6;
 `
-
-export const ServicesAccordionItemListSummary = styled.p`
-    padding-left: 1rem;
-    font-size: 14px;
-`;
 
 export const ServicesAccordionItemSummary = styled.div`
     margin-top: 20px;

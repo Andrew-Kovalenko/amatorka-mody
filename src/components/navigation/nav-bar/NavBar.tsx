@@ -32,8 +32,8 @@ export const NavBar: React.FC<IPropsNavBar> = ({
         <NavBarWrapper isNavBarOpen={isNavBarOpen}>
             <NavBarOverlay onClick={toggleNavBar}/>
             <NavBarContent>
-                <NavBarItem onClick={() => onItemClick(navBarContext.mainRef)}>
-                    Головна
+                <NavBarItem onClick={() => onItemClick(navBarContext.aboutMeRef)}>
+                    Про мене
                 </NavBarItem>
                 <NavBarItem onClick={() => onItemClick(navBarContext.servicesRef)}>
                     Послуги

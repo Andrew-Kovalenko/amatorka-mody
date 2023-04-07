@@ -17,20 +17,6 @@ export const ContactsText = styled.p`
     margin-bottom: 15px;
 `
 
-export const ContactsSubTitle = styled.p`
-    font-size: 24px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-`
-
-export const ContactsLink = styled.a`
-    font-size: 16px;
-    margin-right: 20px;
-    text-decoration: underline;
-    cursor: pointer;
-    color: #063970;
-`
-
 export const ContactsIcon = styled.a`
     display: inline-block;
     width: 40px;

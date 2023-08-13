@@ -38,6 +38,15 @@ export const ServicesAccordionHeader = styled.div`
         color: #fcf4e6;
         opacity: 75%;
     }
+    
+    
+    @media (hover: none) {
+        :active {
+            border-bottom: 1px solid #fcf4e6;
+            color: #fcf4e6;
+            opacity: 75%;
+        }
+    }
 `
 
 export const ServicesAccordionHeaderTitle = styled.h4`

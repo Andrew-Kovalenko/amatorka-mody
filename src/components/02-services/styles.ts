@@ -33,12 +33,13 @@ export const ServicesAccordionHeader = styled.div`
     cursor: pointer;
     transition: all .2s linear;
     
-    :hover {
-        border-bottom: 1px solid #fcf4e6;
-        color: #fcf4e6;
-        opacity: 75%;
+    @media (hover: hover) {
+        :active {
+            border-bottom: 1px solid #fcf4e6;
+            color: #fcf4e6;
+            opacity: 75%;
+        }
     }
-    
     
     @media (hover: none) {
         :active {

@@ -59,7 +59,7 @@ export const Services: React.FC = () => {
                                     </ServicesAccordionHeaderArrow>
                                 </ServicesAccordionHeader>
                                 <ServicesAccordionItem isOpen={ activeTab === service.type }>
-                                    <ServicesAccordionItemContent>
+                                    <ServicesAccordionItemContent isOpen={ activeTab === service.type }>
                                         {service.details.lists.map(list => ((
                                             <>
                                                 <ServicesAccordionItemListTitle>{list.title}</ServicesAccordionItemListTitle>

@@ -5,7 +5,7 @@ export const servicesList: IService[] = [
         type: ServiceType.LINES,
         title: 'Аналіз ліній зовнішності',
         details: {
-            price: '70 доларів',
+            price: '100 доларів',
             format: ServiceFormat.ONLINE,
             ETA: '7-10 робочих днів з моменту заповнення анкети та надсилання фото.',
             lists: [
@@ -46,7 +46,7 @@ export const servicesList: IService[] = [
         type: ServiceType.WARDROBE_REVIEW,
         title: 'Розбір гардеробу + шопінг-супровід',
         details: {
-            price: '150 доларів як для online, так і для offline послуги. У випадку наявності великої кількості позицій для розбору (понад 70), ціна коригується.',
+            price: '200 доларів як для online, так і для offline послуги. У випадку наявності великої кількості позицій для розбору (понад 70), ціна коригується.',
             format: ServiceFormat.ALL,
             ETA: '7-10 робочих днів з моменту заповнення анкети та надсилання фото (або проведення розбору речей в форматі offline).',
             importantNote: 'Гардероб розбирається по сезонам: зима/осінь АБО весна/літо.',
@@ -90,7 +90,7 @@ export const servicesList: IService[] = [
         type: ServiceType.CUPSULA,
         title: 'Формування капсули',
         details: {
-            price: '150 доларів',
+            price: '200 доларів',
             format: ServiceFormat.ONLINE,
             ETA: ' 7-10 робочих днів з моменту надсилання фото та заповнення анкети.',
             lists: [
@@ -134,7 +134,7 @@ export const servicesList: IService[] = [
         type: ServiceType.WARDROBE_STYLING,
         title: 'Стайлінг гардеробу',
         details: {
-            price: '50-150 доларів (в залежності від кількості речей)',
+            price: 'від 50 доларів (в залежності від кількості речей)',
             format: ServiceFormat.ONLINE,
             ETA: ' 7-10 робочих днів з моменту надсилання фото.',
             lists: [
@@ -171,7 +171,7 @@ export const servicesList: IService[] = [
         type: ServiceType.STYLIST_FOR_YEAR,
         title: 'Стиліст на рік',
         details: {
-            price: '500 доларів',
+            price: '700 доларів',
             format: ServiceFormat.ALL,
             ETA: '7-10 робочих днів для кожної послуги або за запитом',
             lists: [

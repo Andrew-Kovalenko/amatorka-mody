@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 export const ServicesWrapper = styled.div`
     display: flex;
@@ -77,21 +77,28 @@ export const ServicesAccordionHeaderArrow = styled.div<{isOpen: boolean}>`
 `
 
 export const ServicesAccordionItem = styled.div<{isOpen: boolean}>`
-    display: flex;
-    width: 100%;
-    height: ${({isOpen}) => isOpen ? '100%' : '0'};
-    transform: ${({isOpen}) => isOpen ? 'scaleY(1)' : 'scaleY(0)'};
-    transition: all .3s;
-    overflow: hidden;
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: all 0.3s linear;
+
+    ${({isOpen}) => isOpen && css`
+        overflow: hidden;
+        opacity: 1;
+        grid-template-rows: 1fr;
+      `
+    }
 `
 
-export const ServicesAccordionItemContent = styled.div`
+export const ServicesAccordionItemContent = styled.div<{isOpen: boolean}>`
     display: flex;
     flex-direction: column;
     font-size: 16px;
     width: 100%;
-    padding: 0.5rem 0.5rem;
+    padding: ${({isOpen}) => isOpen ? '0.5rem' : '0 0.5rem'};
     opacity: 85%;
+    overflow: hidden;
+    transition: all 0.3s linear;
 
     ul {
         margin-bottom: 1rem;

@@ -6,7 +6,7 @@ export const NavigationButtonWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 25px;
     right: 25px;
     cursor: pointer;
@@ -24,7 +24,7 @@ export const NavigationButtonContentBase = css`
 export const NavigationButtonContent = styled.div<{isNavBarOpen: boolean}>`
     ${NavigationButtonContentBase};
     position: relative;
-    box-shadow: 0 1px 1px rgba(243, 252, 230, 0.20);
+    box-shadow: 0 2px 0 rgba(243, 252, 230, 0.20);
     
     ${({isNavBarOpen}) => isNavBarOpen && css`
         height: 0;
@@ -36,7 +36,7 @@ export const NavigationButtonContent = styled.div<{isNavBarOpen: boolean}>`
         content: "";
         position: absolute;
         top: -10px;
-        box-shadow: 0 1px 1px rgba(243, 252, 230, 0.20);
+        box-shadow: 0 2px 0 rgba(243, 252, 230, 0.20);
         ${({isNavBarOpen}) => isNavBarOpen && css`
             background-color: white;
             transform: rotate(45deg);
@@ -50,7 +50,7 @@ export const NavigationButtonContent = styled.div<{isNavBarOpen: boolean}>`
         content: "";
         position: absolute;
         top: 10px;
-        box-shadow: 0 1px 1px rgba(243, 252, 230, 0.20);
+        box-shadow: 0 2px 0 rgba(243, 252, 230, 0.20);
         ${({isNavBarOpen}) => isNavBarOpen && css`
             background-color: white;
             transform: rotate(-45deg);

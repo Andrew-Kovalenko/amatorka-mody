@@ -1,0 +1,8 @@
+export enum ServiceForClientsType {
+    LINES = 'LINES',
+    CUPSULA = 'CUPSULA',
+    WARDROBE_REVIEW = 'WARDROBE_REVIEW',
+    WARDROBE_STYLING = 'WARDROBE_STYLING',
+    STYLIST_FOR_YEAR = 'STYLIST_FOR_YEAR',
+}
+

@@ -1,8 +1,9 @@
-import { IService, ServiceFormat, ServiceListType, ServiceType } from './types';
+import { IService, ServiceFormat, ServiceListType } from '../types';
+import { ServiceForClientsType  } from './types';
 
-export const servicesList: IService[] = [
+export const servicesList: IService<ServiceForClientsType>[] = [
     {
-        type: ServiceType.LINES,
+        type: ServiceForClientsType.LINES,
         title: 'Аналіз ліній зовнішності',
         details: {
             price: '100 доларів',
@@ -43,7 +44,7 @@ export const servicesList: IService[] = [
         },
     },
     {
-        type: ServiceType.WARDROBE_REVIEW,
+        type: ServiceForClientsType.WARDROBE_REVIEW,
         title: 'Розбір гардеробу + шопінг-супровід',
         details: {
             price: '200 доларів як для online, так і для offline послуги. У випадку наявності великої кількості позицій для розбору (понад 70), ціна коригується.',
@@ -83,11 +84,11 @@ export const servicesList: IService[] = [
                     ],
                 },
             ],
-            listSummary: 'Тобто, фактично ви отримуєте дві послуги - розбір гардеробу та шопінг-супровід. Саме такий підхід, на мою думку, є органічним та ефективним.',
+            listSummary: ['Тобто, фактично ви отримуєте дві послуги - розбір гардеробу та шопінг-супровід. Саме такий підхід, на мою думку, є органічним та ефективним.'],
         },
     },
     {
-        type: ServiceType.CUPSULA,
+        type: ServiceForClientsType.CUPSULA,
         title: 'Формування капсули',
         details: {
             price: '200 доларів',
@@ -131,7 +132,7 @@ export const servicesList: IService[] = [
         },
     },
     {
-        type: ServiceType.WARDROBE_STYLING,
+        type: ServiceForClientsType.WARDROBE_STYLING,
         title: 'Стайлінг гардеробу',
         details: {
             price: 'від 50 доларів (в залежності від кількості речей)',
@@ -168,7 +169,7 @@ export const servicesList: IService[] = [
         },
     },
     {
-        type: ServiceType.STYLIST_FOR_YEAR,
+        type: ServiceForClientsType.STYLIST_FOR_YEAR,
         title: 'Стиліст на рік',
         details: {
             price: '700 доларів',
@@ -185,17 +186,17 @@ export const servicesList: IService[] = [
                 },
                 {
                     title: 'Що входить у дану послугу:',
-                    type: ServiceListType.SERVICES,
+                    type: ServiceListType.SERVICE_CONTAINS,
                     items: [
                         {text: 'розбір ліній зовнішності;'},
                         {text: '2 розбори гардеробу + шопінг-супроводи (на сезон весна/літо та осінь/зима' +
                                 ' відповідно);'},
                         {text: '1 капсула за будь-яким запитом;'},
-                        {text: '2 послуги стайлінгу гардеробу;'},
+                        {text: '2 послуги стайлінгу гардеробу.'},
                     ],
                 },
             ],
-            listSummary: 'Опис зазначених послуг читайте вище',
+            listSummary: ['Опис зазначених послуг читайте вище'],
         },
     },
 ]

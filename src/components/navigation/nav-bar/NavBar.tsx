@@ -35,8 +35,11 @@ export const NavBar: React.FC<IPropsNavBar> = ({
                 <NavBarItem onClick={() => onItemClick(navBarContext.aboutMeRef)}>
                     Про мене
                 </NavBarItem>
-                <NavBarItem onClick={() => onItemClick(navBarContext.servicesRef)}>
+                <NavBarItem onClick={() => onItemClick(navBarContext?.servicesForClientsRef)}>
                     Послуги
+                </NavBarItem>
+                <NavBarItem onClick={() => onItemClick(navBarContext?.servicesForBrandsRef)}>
+                    Для брендів
                 </NavBarItem>
                 <NavBarItem onClick={() => onItemClick(navBarContext.contactsRef)}>
                     Контакти

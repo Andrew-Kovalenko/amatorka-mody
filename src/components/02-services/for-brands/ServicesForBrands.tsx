@@ -1,17 +1,29 @@
 import * as React from 'react';
-import { useCallback, useContext, useState } from 'react';
-import { ServicesAccordion, ServicesAccordionHeader, ServicesAccordionHeaderArrow, ServicesAccordionHeaderTitle, ServicesAccordionHeaderTitleFormat, ServicesAccordionItem, ServicesAccordionItemContent, ServicesAccordionItemListTitle, ServicesAccordionItemSummary, ServicesTitle, ServicesWrapper } from './styles';
-import { servicesList } from './servicesList';
-import { ServiceFormat, ServiceListType, ServiceType } from './types';
-import { NavBarContext } from '../root/NavBarContext';
-import './styles.css'
-import { InnerContainer } from '../root/styles';
+import {useCallback, useContext, useState} from 'react';
+import {
+    ServicesAccordion,
+    ServicesAccordionHeader,
+    ServicesAccordionHeaderArrow,
+    ServicesAccordionHeaderTitle,
+    ServicesAccordionItem,
+    ServicesAccordionItemContent,
+    ServicesAccordionItemListTitle,
+    ServicesAccordionItemSummary,
+    ServicesTitle
+} from '../styles';
+import {servicesForBrandsList} from './servicesList';
+import {ServiceForBrandsType} from './types';
+import {ServiceListType} from '../types';
+import {NavBarContext} from '../../root/NavBarContext';
+import '../styles.css'
+import {InnerContainer} from '../../root/styles';
+import {ServicesWrapperForBrands} from "./styles";
 
-export const Services: React.FC = () => {
-    const [activeTab, setActiveTab] = useState<ServiceType | null>(null)
+export const ServicesForBrands: React.FC = () => {
+    const [activeTab, setActiveTab] = useState<ServiceForBrandsType | null>(null)
     const navBarContext = useContext(NavBarContext);
 
-    const toggleTab = useCallback((tab: ServiceType) => {
+    const toggleTab = useCallback((tab: ServiceForBrandsType) => {
         if (activeTab === tab) {
             setActiveTab(null);
 
@@ -30,36 +42,25 @@ export const Services: React.FC = () => {
     }
 
     return (
-        <ServicesWrapper ref={navBarContext && navBarContext.servicesRef}>
+        <ServicesWrapperForBrands ref={navBarContext && navBarContext.servicesForBrandsRef}>
             <InnerContainer>
                 <ServicesTitle>
-                    Послуги
+                    Для брендів
                 </ServicesTitle>
                 <ServicesAccordion>
                     {
-                        servicesList.map(service => ((
+                        servicesForBrandsList.map(service => ((
                             <>
                                 <ServicesAccordionHeader onClick={() => toggleTab(service.type)}>
                                     <ServicesAccordionHeaderTitle>
                                         {service.title}
                                     </ServicesAccordionHeaderTitle>
-                                    {service.details.format === ServiceFormat.ALL
-                                        ? (
-                                            <ServicesAccordionHeaderTitleFormat>
-                                                <div>ONLINE/</div>
-                                                <div>OFFLINE</div>
-                                            </ServicesAccordionHeaderTitleFormat>
-                                        ) : (
-                                            <ServicesAccordionHeaderTitleFormat>
-                                                {service.details.format}
-                                            </ServicesAccordionHeaderTitleFormat>
-                                        )}
-                                    <ServicesAccordionHeaderArrow isOpen={activeTab === service.type} >
+                                    <ServicesAccordionHeaderArrow isOpen={activeTab === service.type}>
                                         +
                                     </ServicesAccordionHeaderArrow>
                                 </ServicesAccordionHeader>
-                                <ServicesAccordionItem isOpen={ activeTab === service.type }>
-                                    <ServicesAccordionItemContent isOpen={ activeTab === service.type }>
+                                <ServicesAccordionItem isOpen={activeTab === service.type}>
+                                    <ServicesAccordionItemContent isOpen={activeTab === service.type}>
                                         {service.details.lists.map(list => ((
                                             <>
                                                 <ServicesAccordionItemListTitle>{list.title}</ServicesAccordionItemListTitle>
@@ -79,13 +80,16 @@ export const Services: React.FC = () => {
                                                 </ul>
                                             </>
                                         )))}
-                                        <p>{service.details.listSummary}</p>
+                                        {service.details.listSummary?.map((item, index) => <>
+                                            {index !== 0 && <br/>}
+                                            <p>{item}</p>
+                                        </>)}
                                         <ServicesAccordionItemSummary>
                                             {service.details.importantNote && (
                                                 <p><span>Важливо!</span> {service.details.importantNote}</p>
                                             )}
-                                            <p><span>Вартість</span> - {service.details.price}</p>
-                                            <p><span>Строк виконання</span> - {service.details.ETA}</p>
+                                            {service.details.price && <p><span>Вартість</span> - {service.details.price}</p>}
+                                            {service.details.ETA && <p><span>Строк виконання</span> - {service.details.ETA}</p>}
                                         </ServicesAccordionItemSummary>
                                     </ServicesAccordionItemContent>
                                 </ServicesAccordionItem>
@@ -94,6 +98,6 @@ export const Services: React.FC = () => {
                     }
                 </ServicesAccordion>
             </InnerContainer>
-        </ServicesWrapper>
+        </ServicesWrapperForBrands>
     );
 }

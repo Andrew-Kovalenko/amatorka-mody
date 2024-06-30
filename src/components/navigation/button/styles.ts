@@ -36,7 +36,7 @@ export const NavigationButtonContent = styled.div<{isNavBarOpen: boolean}>`
         content: "";
         position: absolute;
         top: -10px;
-        //box-shadow: 0 1px 1px rgba(243, 252, 230, 0.20);
+        box-shadow: 0 1px 1px rgba(243, 252, 230, 0.20);
         ${({isNavBarOpen}) => isNavBarOpen && css`
             background-color: white;
             transform: rotate(45deg);
